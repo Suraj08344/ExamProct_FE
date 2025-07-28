@@ -2,7 +2,10 @@
 // Development URLs
 const DEV_HTTP_URL = 'http://localhost:5001/api';
 const DEV_HTTPS_URL = 'https://your-ngrok-backend-url.ngrok.io/api'; // Replace with your ngrok URL
-const BASE_URL = 'https://examproctor-backend-e6mh.onrender.com/api'; // Updated production URL
+const BASE_URL = isProduction
+  ? 'https://examproctor-backend-e6mh.onrender.com/api'
+  : 'http://localhost:5000/api';
+ // Updated production URL
 
 const getApiUrl = () => {
   // Always use the deployed backend URL for now
