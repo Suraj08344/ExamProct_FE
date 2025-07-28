@@ -1,0 +1,60 @@
+/* App-specific styles can be added here if needed */
+
+/* Fullscreen exam styles - only applied to exam page */
+.exam-fullscreen {
+  overflow: hidden !important;
+}
+
+.exam-fullscreen * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide browser UI elements in fullscreen */
+.exam-fullscreen::-webkit-scrollbar {
+  display: none;
+}
+
+/* Force fullscreen behavior for exam page only */
+.exam-fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  background-color: white !important;
+  overflow: hidden !important;
+}
+
+/* Hide any remaining browser UI */
+.exam-fullscreen header,
+.exam-fullscreen nav,
+.exam-fullscreen .browser-ui {
+  display: none !important;
+}
+
+/* Ensure exam content takes full viewport */
+.exam-fullscreen .exam-container {
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+/* Animation for suspicious activity alerts */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
